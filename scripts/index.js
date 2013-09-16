@@ -1,6 +1,6 @@
 var canvas = null,
     context = null,
-    currentFrame =0,
+    currentFrame = 0,
     framerate = 1000/30;
 
 var assets = [
@@ -25,6 +25,7 @@ var assets = [
     ];
 
 var frames = [];
+var frameCount = 18;
 
 var onImageLoad = function(){
     console.log('loaded');
@@ -50,10 +51,10 @@ var animate = function(){
     // Draw each frame in order, looping back around to the
     // beginning of the animation once you reach the end.
     // Draw each frame at a position of (0,0) on the canvas.
-
+    context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(frames[currentFrame],0,0);
-    currentFrame = currentFrame + 1;
+    currentFrame = (currentFrame == frameCount-1)? 0: currentFrame+1;
 
 };
 
-setup()
+setup();
