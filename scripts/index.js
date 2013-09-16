@@ -1,9 +1,7 @@
 var canvas = null,
     context = null,
     currentFrame =0,
-    framerate = 1000/30,
-    frameCount = 0,
-    img = null;
+    framerate = 1000/30;
 
 var assets = [
         'https://www.udacity.com/media/js/standalone/libs/gamedev_assets/robowalk/robowalk00.png',
@@ -37,10 +35,6 @@ var setup = function(){
     context = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
-    img = new Image();
-    img.onload = onImageLoad;
-    img.src = "/images/ralphyrobot.png";
 
     for(var i=0; i < assets.length; i++){
         var img = new Image();
